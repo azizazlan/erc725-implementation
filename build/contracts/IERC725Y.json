@@ -1,0 +1,715 @@
+{
+  "contractName": "IERC725Y",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "value",
+          "type": "bytes"
+        }
+      ],
+      "name": "DataChanged",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getData",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "value",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "value",
+          "type": "bytes"
+        }
+      ],
+      "name": "setData",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.10+commit.00c0fcaf\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"key\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"value\",\"type\":\"bytes\"}],\"name\":\"DataChanged\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"key\",\"type\":\"bytes32\"}],\"name\":\"getData\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"value\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"key\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"value\",\"type\":\"bytes\"}],\"name\":\"setData\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Contract module which provides the ability to set arbitrary key value sets that can be changed over time. It is intended to standardise certain keys value pairs to allow automated retrievals and interactions from interfaces and other smart contracts. ERC 165 interface id: 0x2bd57b73 `setData` should only be callable by the owner of the contract set via ERC173.\",\"methods\":{\"getData(bytes32)\":{\"details\":\"Gets data at a given `key`\"},\"setData(bytes32,bytes)\":{\"details\":\"Sets data at a given `key`. SHOULD only be callable by the owner of the contract set via ERC173. Emits a {DataChanged} event.\"}},\"title\":\"ERC725 Y data store\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"erc725/contracts/ERC725/IERC725Y.sol\":\"IERC725Y\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"erc725/contracts/ERC725/IERC725Y.sol\":{\"keccak256\":\"0xeb78f2558cc7df0910dc4d491d7f6457771a4b08a26bc02c4c7aacd0f30eac76\",\"license\":\"CC0-1.0\",\"urls\":[\"bzz-raw://63c12d228c53f7399966f93094a92f5c8eb92cab2318c8df800e104694cb30e8\",\"dweb:/ipfs/QmQjKnsPKwXcK9QvS7QTzmSxsEoZ5cRrNQQkzu7kwn91MY\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: CC0-1.0\npragma solidity >=0.5.0 <0.7.0;\n\n/**\n * @title ERC725 Y data store\n * @dev Contract module which provides the ability to set arbitrary key value sets that can be changed over time.\n * It is intended to standardise certain keys value pairs to allow automated retrievals and interactions\n * from interfaces and other smart contracts.\n *\n * ERC 165 interface id: 0x2bd57b73\n *\n * `setData` should only be callable by the owner of the contract set via ERC173.\n */\ninterface IERC725Y /* is ERC165, ERC173 */ {\n\n    /**\n    * @dev Emitted when data at a key is changed.\n    */\n    event DataChanged(bytes32 indexed key, bytes value);\n\n    /**\n     * @dev Gets data at a given `key`\n     */\n    function getData(bytes32 key) external view returns (bytes memory value);\n\n    /**\n     * @dev Sets data at a given `key`.\n     * SHOULD only be callable by the owner of the contract set via ERC173.\n     *\n     * Emits a {DataChanged} event.\n     */\n    function setData(bytes32 key, bytes memory value) external;\n}\n",
+  "sourcePath": "erc725/contracts/ERC725/IERC725Y.sol",
+  "ast": {
+    "absolutePath": "erc725/contracts/ERC725/IERC725Y.sol",
+    "exportedSymbols": {
+      "IERC725Y": [
+        939
+      ]
+    },
+    "id": 940,
+    "license": "CC0-1.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 914,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "36:31:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 915,
+          "nodeType": "StructuredDocumentation",
+          "src": "69:426:13",
+          "text": " @title ERC725 Y data store\n @dev Contract module which provides the ability to set arbitrary key value sets that can be changed over time.\n It is intended to standardise certain keys value pairs to allow automated retrievals and interactions\n from interfaces and other smart contracts.\n ERC 165 interface id: 0x2bd57b73\n `setData` should only be callable by the owner of the contract set via ERC173."
+        },
+        "fullyImplemented": false,
+        "id": 939,
+        "linearizedBaseContracts": [
+          939
+        ],
+        "name": "IERC725Y",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 916,
+              "nodeType": "StructuredDocumentation",
+              "src": "546:60:13",
+              "text": " @dev Emitted when data at a key is changed."
+            },
+            "id": 922,
+            "name": "DataChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 921,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 918,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 922,
+                  "src": "629:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 917,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "629:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 920,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 922,
+                  "src": "650:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 919,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "650:5:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "628:34:13"
+            },
+            "src": "611:52:13"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 923,
+              "nodeType": "StructuredDocumentation",
+              "src": "669:50:13",
+              "text": " @dev Gets data at a given `key`"
+            },
+            "functionSelector": "54f6127f",
+            "id": 930,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getData",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 926,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 925,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 930,
+                  "src": "741:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 924,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "741:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "740:13:13"
+            },
+            "returnParameters": {
+              "id": 929,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 928,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 930,
+                  "src": "777:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 927,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "777:5:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "776:20:13"
+            },
+            "scope": 939,
+            "src": "724:73:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 931,
+              "nodeType": "StructuredDocumentation",
+              "src": "803:170:13",
+              "text": " @dev Sets data at a given `key`.\n SHOULD only be callable by the owner of the contract set via ERC173.\n Emits a {DataChanged} event."
+            },
+            "functionSelector": "7f23690c",
+            "id": 938,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setData",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 936,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 933,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 938,
+                  "src": "995:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 932,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "995:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 935,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 938,
+                  "src": "1008:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 934,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1008:5:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "994:33:13"
+            },
+            "returnParameters": {
+              "id": 937,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1036:0:13"
+            },
+            "scope": 939,
+            "src": "978:59:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 940,
+        "src": "496:543:13"
+      }
+    ],
+    "src": "36:1004:13"
+  },
+  "legacyAST": {
+    "absolutePath": "erc725/contracts/ERC725/IERC725Y.sol",
+    "exportedSymbols": {
+      "IERC725Y": [
+        939
+      ]
+    },
+    "id": 940,
+    "license": "CC0-1.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 914,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "36:31:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 915,
+          "nodeType": "StructuredDocumentation",
+          "src": "69:426:13",
+          "text": " @title ERC725 Y data store\n @dev Contract module which provides the ability to set arbitrary key value sets that can be changed over time.\n It is intended to standardise certain keys value pairs to allow automated retrievals and interactions\n from interfaces and other smart contracts.\n ERC 165 interface id: 0x2bd57b73\n `setData` should only be callable by the owner of the contract set via ERC173."
+        },
+        "fullyImplemented": false,
+        "id": 939,
+        "linearizedBaseContracts": [
+          939
+        ],
+        "name": "IERC725Y",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 916,
+              "nodeType": "StructuredDocumentation",
+              "src": "546:60:13",
+              "text": " @dev Emitted when data at a key is changed."
+            },
+            "id": 922,
+            "name": "DataChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 921,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 918,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 922,
+                  "src": "629:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 917,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "629:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 920,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 922,
+                  "src": "650:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 919,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "650:5:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "628:34:13"
+            },
+            "src": "611:52:13"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 923,
+              "nodeType": "StructuredDocumentation",
+              "src": "669:50:13",
+              "text": " @dev Gets data at a given `key`"
+            },
+            "functionSelector": "54f6127f",
+            "id": 930,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getData",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 926,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 925,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 930,
+                  "src": "741:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 924,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "741:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "740:13:13"
+            },
+            "returnParameters": {
+              "id": 929,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 928,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 930,
+                  "src": "777:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 927,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "777:5:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "776:20:13"
+            },
+            "scope": 939,
+            "src": "724:73:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 931,
+              "nodeType": "StructuredDocumentation",
+              "src": "803:170:13",
+              "text": " @dev Sets data at a given `key`.\n SHOULD only be callable by the owner of the contract set via ERC173.\n Emits a {DataChanged} event."
+            },
+            "functionSelector": "7f23690c",
+            "id": 938,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setData",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 936,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 933,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 938,
+                  "src": "995:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 932,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "995:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 935,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 938,
+                  "src": "1008:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 934,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1008:5:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "994:33:13"
+            },
+            "returnParameters": {
+              "id": 937,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1036:0:13"
+            },
+            "scope": 939,
+            "src": "978:59:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 940,
+        "src": "496:543:13"
+      }
+    ],
+    "src": "36:1004:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.10+commit.00c0fcaf.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.5",
+  "updatedAt": "2020-10-26T05:22:23.817Z",
+  "devdoc": {
+    "details": "Contract module which provides the ability to set arbitrary key value sets that can be changed over time. It is intended to standardise certain keys value pairs to allow automated retrievals and interactions from interfaces and other smart contracts. ERC 165 interface id: 0x2bd57b73 `setData` should only be callable by the owner of the contract set via ERC173.",
+    "methods": {
+      "getData(bytes32)": {
+        "details": "Gets data at a given `key`"
+      },
+      "setData(bytes32,bytes)": {
+        "details": "Sets data at a given `key`. SHOULD only be callable by the owner of the contract set via ERC173. Emits a {DataChanged} event."
+      }
+    },
+    "title": "ERC725 Y data store"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

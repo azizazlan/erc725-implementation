@@ -1,0 +1,459 @@
+{
+  "contractName": "UtilsLib",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.10+commit.00c0fcaf\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"erc725/contracts/helpers/UtilsLib.sol\":\"UtilsLib\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"erc725/contracts/helpers/UtilsLib.sol\":{\"keccak256\":\"0x96e839142fe7a6d0714b0f787a748d6419a17c5669df995615729caa6c09dbb2\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5ab86a6dfdc3127ca1fcd31e7d28193d207d7a9773ad17d80b740c5402fb41a5\",\"dweb:/ipfs/QmdjJ6BxsJuvUKiXAPYy6UzNcfL5Xkycr3QqNqtFsepeqB\"]}},\"version\":1}",
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212204a9c9d62b3a1fb23068b85d6e3413d413ae0e9e49656b817dede731e6a38434264736f6c634300060a0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212204a9c9d62b3a1fb23068b85d6e3413d413ae0e9e49656b817dede731e6a38434264736f6c634300060a0033",
+  "immutableReferences": {},
+  "sourceMap": "187:452:15:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "187:452:15:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: Apache-2.0\n/*\n * @title Solidity Utils\n * @author Fabian Vogelsteller <fabian@lukso.network>\n *\n * @dev Utils functions\n */\n\npragma solidity >=0.5.0 <0.7.0;\n\n\nlibrary UtilsLib {\n\n    /**\n     * @dev Internal function to determine if an address is a contract\n     * @param _target The address being queried\n     *\n     * @return result Returns TRUE if `_target` is a contract\n     */\n    function isContract(address _target) internal view returns(bool result) {\n        // solium-disable-next-line security/no-inline-assembly\n        assembly {\n            result := gt(extcodesize(_target), 0)\n        }\n    }\n}\n",
+  "sourcePath": "erc725/contracts/helpers/UtilsLib.sol",
+  "ast": {
+    "absolutePath": "erc725/contracts/helpers/UtilsLib.sol",
+    "exportedSymbols": {
+      "UtilsLib": [
+        966
+      ]
+    },
+    "id": 967,
+    "license": "Apache-2.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 955,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "153:31:15"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 966,
+        "linearizedBaseContracts": [
+          966
+        ],
+        "name": "UtilsLib",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 964,
+              "nodeType": "Block",
+              "src": "487:150:15",
+              "statements": [
+                {
+                  "AST": {
+                    "nodeType": "YulBlock",
+                    "src": "570:61:15",
+                    "statements": [
+                      {
+                        "nodeType": "YulAssignment",
+                        "src": "584:37:15",
+                        "value": {
+                          "arguments": [
+                            {
+                              "arguments": [
+                                {
+                                  "name": "_target",
+                                  "nodeType": "YulIdentifier",
+                                  "src": "609:7:15"
+                                }
+                              ],
+                              "functionName": {
+                                "name": "extcodesize",
+                                "nodeType": "YulIdentifier",
+                                "src": "597:11:15"
+                              },
+                              "nodeType": "YulFunctionCall",
+                              "src": "597:20:15"
+                            },
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "619:1:15",
+                              "type": "",
+                              "value": "0"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "gt",
+                            "nodeType": "YulIdentifier",
+                            "src": "594:2:15"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "594:27:15"
+                        },
+                        "variableNames": [
+                          {
+                            "name": "result",
+                            "nodeType": "YulIdentifier",
+                            "src": "584:6:15"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "evmVersion": "istanbul",
+                  "externalReferences": [
+                    {
+                      "declaration": 958,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "609:7:15",
+                      "valueSize": 1
+                    },
+                    {
+                      "declaration": 961,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "584:6:15",
+                      "valueSize": 1
+                    }
+                  ],
+                  "id": 963,
+                  "nodeType": "InlineAssembly",
+                  "src": "561:70:15"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 956,
+              "nodeType": "StructuredDocumentation",
+              "src": "211:199:15",
+              "text": " @dev Internal function to determine if an address is a contract\n @param _target The address being queried\n @return result Returns TRUE if `_target` is a contract"
+            },
+            "id": 965,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isContract",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 959,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 958,
+                  "mutability": "mutable",
+                  "name": "_target",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 965,
+                  "src": "435:15:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 957,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:7:15",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "434:17:15"
+            },
+            "returnParameters": {
+              "id": 962,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 961,
+                  "mutability": "mutable",
+                  "name": "result",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 965,
+                  "src": "474:11:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 960,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "474:4:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "473:13:15"
+            },
+            "scope": 966,
+            "src": "415:222:15",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 967,
+        "src": "187:452:15"
+      }
+    ],
+    "src": "153:487:15"
+  },
+  "legacyAST": {
+    "absolutePath": "erc725/contracts/helpers/UtilsLib.sol",
+    "exportedSymbols": {
+      "UtilsLib": [
+        966
+      ]
+    },
+    "id": 967,
+    "license": "Apache-2.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 955,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "153:31:15"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 966,
+        "linearizedBaseContracts": [
+          966
+        ],
+        "name": "UtilsLib",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 964,
+              "nodeType": "Block",
+              "src": "487:150:15",
+              "statements": [
+                {
+                  "AST": {
+                    "nodeType": "YulBlock",
+                    "src": "570:61:15",
+                    "statements": [
+                      {
+                        "nodeType": "YulAssignment",
+                        "src": "584:37:15",
+                        "value": {
+                          "arguments": [
+                            {
+                              "arguments": [
+                                {
+                                  "name": "_target",
+                                  "nodeType": "YulIdentifier",
+                                  "src": "609:7:15"
+                                }
+                              ],
+                              "functionName": {
+                                "name": "extcodesize",
+                                "nodeType": "YulIdentifier",
+                                "src": "597:11:15"
+                              },
+                              "nodeType": "YulFunctionCall",
+                              "src": "597:20:15"
+                            },
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "619:1:15",
+                              "type": "",
+                              "value": "0"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "gt",
+                            "nodeType": "YulIdentifier",
+                            "src": "594:2:15"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "594:27:15"
+                        },
+                        "variableNames": [
+                          {
+                            "name": "result",
+                            "nodeType": "YulIdentifier",
+                            "src": "584:6:15"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "evmVersion": "istanbul",
+                  "externalReferences": [
+                    {
+                      "declaration": 958,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "609:7:15",
+                      "valueSize": 1
+                    },
+                    {
+                      "declaration": 961,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "584:6:15",
+                      "valueSize": 1
+                    }
+                  ],
+                  "id": 963,
+                  "nodeType": "InlineAssembly",
+                  "src": "561:70:15"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 956,
+              "nodeType": "StructuredDocumentation",
+              "src": "211:199:15",
+              "text": " @dev Internal function to determine if an address is a contract\n @param _target The address being queried\n @return result Returns TRUE if `_target` is a contract"
+            },
+            "id": 965,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isContract",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 959,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 958,
+                  "mutability": "mutable",
+                  "name": "_target",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 965,
+                  "src": "435:15:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 957,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:7:15",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "434:17:15"
+            },
+            "returnParameters": {
+              "id": 962,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 961,
+                  "mutability": "mutable",
+                  "name": "result",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 965,
+                  "src": "474:11:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 960,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "474:4:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "473:13:15"
+            },
+            "scope": 966,
+            "src": "415:222:15",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 967,
+        "src": "187:452:15"
+      }
+    ],
+    "src": "153:487:15"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.10+commit.00c0fcaf.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.5",
+  "updatedAt": "2020-10-26T05:22:23.819Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
